@@ -109,7 +109,3 @@ class SaleOrderLineAgent(models.Model):
             name = "%s: %s" % (record.agent.name, record.commission.name)
             res.append((record.id, name))
         return res
-
-    @api.depends('agent', 'commission')
-    def _compute_display_name(self):
-        return super(SaleOrderLineAgent, self)._compute_display_name()
